@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<!-- Plantilla de sitio de tres columnas en HTML5 -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="author" content="JMSR">
+  <meta name="description" content="Plantilla para documento HTML 5">
+  <meta name="keywords" content="HTML, CSS">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  
+  <title>Plantilla para documento HTML 5</title>
+  
+  <style>
+    *
+    {
+      margin: 0;
+      padding: 0;
+    }
+    #espacioSuperior
+    {
+      background-color: #E6E6E6;
+    }
+    #contenedorPagina
+    {
+      margin: 0 auto;
+      border: 1px solid #9900CC;
+      height: 85%;
+    }
+    
+    #encabezado
+    {
+      height: 50px;
+      background-color: #FF3300;
+    }
+    #aLaIzquierda
+    {
+      width: 20%;
+      height: 500px;
+      float: left;
+      background-color: #0066FF;
+    }
+    #contenidoPrincipal
+    {
+      width: 60%;
+      float: left;
+      background-color: #FFFFFF;
+    }
+    #aLaDerecha
+    {
+      width: 20%;
+      height: 500px;
+      float: right;
+      background-color: #006600;
+    }
+    #piePagina
+    {
+      clear: both;
+      height: 25px;
+      background-color: #CC6699;
+    }
+  </style>
+</head>
+<body>
+  <div id="espacioSuperior">
+    <h1>Ejemplo</h1>
+  </div>
+  <div id="contenedorPagina">
+    <header id="encabezado">
+      <p>#encabezado</p>
+    </header>
+    <aside id="aLaIzquierda">
+      <p>#aLaIzquierda</p>
+    </aside>
+    <section id="contenidoPrincipal">
+      <p>#contenidoPrincipal</p>
+    </section>
+    <aside id="aLaDerecha">
+      <p>#aLaDerecha</p>
+    </aside>
+    <footer id="piePagina">
+      <p>#piePagina</p>
+    </footer>
+  </div>
+
+  <form id="dataForm">
+    <div class="form-group row">
+        <label for="data" class="col-2 col-form-label">Nombre perro</label> <br/>
+        <div class="col-10">
+            <input id="data" name="data" class="form-control" type="text" value="">
+        </div>
+
+        <label for="data" class="col-2 col-form-label">Raza</label> <br/>
+        <div class="col-10">
+            <input id="data2" name="data2" class="form-control" type="text" value="">
+        </div>
+
+        <label for="data3" class="col-2 col-form-label">Vacunado?</label> <br/>
+        <div class="col-10">
+            <input id="data3" name="data3" class="form-control" type="text" value="">
+        </div>
+    </div>
+    <input class="btn btn-large btn-primary" value="Ingresar datos" type="submit">
+</form>
+<button onclick="processData()">Post-process</button>
+
+  <script> source="./js/"
+  
+
+var perro;
+var raza, tamanio, pelo;
+var edad = Number*3;
+var vacunado = Boolean;
+
+var data = [];
+    $("#dataForm").submit(function(event) {
+        event.preventDefault();
+        data.push($(this).find('input[name="data"]').val());
+        data2.push($(this).find('input[name="data"]').val());
+        data3.push($(this).find('input[name="data"]').val());
+        alert("Dato Añadida");
+    });
+
+    function processData() {
+        alert(data,data2,data3);
+    }
+
+</script>
+</body>
+</html>

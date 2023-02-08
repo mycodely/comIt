@@ -1,0 +1,20 @@
+M3
+
+// Crear en una carpeta 2 archivos, en uno la fX sumar, y en otro va a requerir la función sumar,
+// y ejecutarlo con 2 números que requiera por parámetro
+
+function suma(v1,v2){
+    console.log(v1+v2);
+}
+
+module.exports = suma;
+
+m4
+
+var suma = require('./modules/modulosuma1');
+var v1= parseInt(process.argv[2]);
+var v2= parseInt(process.argv[3]);
+
+suma(v1,v2);
+
+jajja :( 

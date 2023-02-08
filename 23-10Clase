@@ -1,0 +1,21 @@
+Arrays
+Es una lista ordenada de datos guardados en cada posición.
+
+Tienen funciones relacionadas a las listas, por ejemplo se puede obtener el tamaño, agregar o quitar, concatenar diferentes
+listas
+
+Hacer ejercicio para seleccionar 29 personas aleatorias de un array
+Luego guardarlas en diferentes grupos, no se deben repetir los alumnos.
+
+Hacer una función math random que seleccione una persona random y la guarde para luego añadirla a un grupo.
+
+¿Como hacer para que no se repitan los alumnos? quizás un verificador que vea si existe ya en algún grupo guardado,
+esto puede hacerse con arrays dinámicos, quizás usar un switch... o un objeto.
+
+para recorrer array utilizo forEach, que acada elemento le ejecuto una función
+
+para deshabilitar un input se puede poner como input.disable = true / false
+(se aplica a la variable input)
+
+
+Soy grupo 4 y ya hice el grupo en slack.

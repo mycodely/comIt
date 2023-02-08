@@ -1,0 +1,79 @@
+//var esta_lloviendo = true;
+//var hace_frio = true;
+//var tengo_miedo_a_salir = false;
+
+//if (esta_lloviendo == true && hace_frio == true) console.log("voy a salir");
+//else if (tengo_miedo_a_salir = true) console.log("creo que me voy a quedar");
+
+//esta_lloviendo= false;
+//hace_frio = false;
+
+//if(esta_lloviendo == false || hace_frio == false) console.log("no se por que me quedo en casa");
+//else console.log("deberia salir a ver si llueve");
+
+var nombre;
+
+function saludar(nombre){
+
+    alert ("Hola " + nombre);
+}
+
+saludar;
+var numero1= 2;
+var numero2= 4;
+
+function suma(){
+    alert (numero1 +numero2)
+}
+
+suma(numero1,numero2);
+
+prompt ("hola");
+var nombre = preguntar_nombre;
+
+function preguntar_nombre(){
+    var nombre= prompt("nombre?");
+    return nombre
+}
+
+var n;
+
+function doble(n){
+    console.log(n *2)
+    return n;
+}
+
+function doble(n);
+
+//Ejercicio 3.A 
+//Crear una función
+//llamada log que muestre el valor que se le pasa por parámetro
+function log(){
+    var ingreso = prompt("ingrese algo");
+    return console.log(ingreso);
+}
+log("poner string");
+
+//Ejercicio 3.B Crear una función llamada 
+//identidad que retorne el valor que se le pasa
+
+function identidad(){
+    var valor = prompt("que valor te corresponde");
+    return valor;
+}
+
+identidad("Tiene valor de:");
+
+
+//Ejercicio 3. (C)
+//Crear una función llamada suma devuelva la suma
+//de los 2 números que reciba por parámetros
+
+function suma(){
+    var num_1= prompt ("ingrese primer numero a sumar");
+    var num_2= prompt ("ingrese un segundo numero a sumar");
+    var resultado= num_1 + num_2;
+    return resultado;
+}
+
+function suma(2+3);

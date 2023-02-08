@@ -1,0 +1,65 @@
+<form action="/code.js" id="post" method="POST">
+            Create: <input type="text" name="usrname"><br>
+            <input type="submit" value="Submit">
+          </form>
+
+
+/* la respuesta siempre tiene que ser en string
+se debe separar un recurso estático de la ruta /api 
+para que no devuelva html sino un json por ejemplo. 
+
+Se utiliza en este caso lectura fs del recurso al que se quiere leer /carpeta/ejemplo.css
+no encuentra 404.
+
+Para hacer update debe utilizarse un array
+para modificar una lista.
+
+Para manipular un objeto 69 enchnart debe guardarse en una lista en la que se modifique.
+
+como devolver un json.
+*/
+
+
+var fs = require ('fs')
+var http = require("http")
+var url = require('"http://localhost:3000"')
+var puerto = 3000
+var button = require ('./index.html')
+JSON.parse(button)
+
+var createJ = fs.writeFileSync(`ejemplo`,`${button}`)
+
+
+var servidor = http.createServer(function (req, res) {
+  var objetoUrl = url.parse(req.url)
+
+  if (req.url === '/' && req.method === 'GET') {
+    if (req.headers.accept === 'application/json') {
+      res.setHeader('Content-Type', 'application/json')
+     // var tipo_de_respuesta = busqueda.get('tipo')
+
+    } else if (req.method === 'POST') {
+      res.setHeader('Content-Type', 'application/json')
+        var data = ''
+        req.on('data', function (bloque_de_texto) {
+          data += bloque_de_texto
+        })
+        req.on('end', function () {
+          var stringNew= JSON.parse(data)
+          stringArray.push(stringNew)
+      res.end()
+        })
+  } else {
+    res.statusCode = 404
+    res.end('ruta no encontrada :(')
+  }
+
+
+  /* pasos:
+  tengo que crear un html con un botton, si es form mejor, la manera facil es con on click,
+  luego de eso pongo script en html,
+  en mi archivo js manejo la respuesta en metodo == post,  cuando este coincida con el boton basandose en alguna id o require
+  se debe activar el evento del submit el cual va a tomar desde el codigo y va a crear una respuesta utilizando filesystem,
+  como vinculo la fx de FS con el evento y con la conexión post?
+
+  Pendiente: hacer 4 botones de crud y repasar TODA la sintaxis básica. */

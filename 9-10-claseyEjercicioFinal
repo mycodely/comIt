@@ -1,0 +1,106 @@
+<html>
+<head></head>
+
+<body>
+<h1> Bienvenido!</h1>
+<header>
+<ul>
+<li> Home</li>
+<li> Galeria</li>
+<li> Acerca de</li>
+<li> Contacto</li>
+</ul>
+</header>
+
+</body>
+
+</html>
+
+<!--//innerHTML para cambiar elementos del html
+
+    document.querySelector('body')
+    // para modificarlo algo se le asigna un valor a la funcion//
+
+    document.body.innerHTML= `<h1> norman </h1>`
+
+    // solo pasa desde del lado del cliente en ejecución
+
+    var contador = 0;
+
+function cambiarTitulo(){ var tituloHtml = document.querySelector('h1')
+contador= contador +1;
+titutloHtml.innerHTML = contador
+
+}
+//FUNCIONES GLOBALES//
+   //ejecuta la funcion que le pasas
+    setInterval(cambiarTitutlo, 1000) 
+
+    //hace algo despues de cierto intervalo
+clearInterval(17)
+
+//hace algo despues de cierto tiempo
+setTimeout(cambiarTitutlo, 1000)
+
+var identificador = setInterval(cambiarTitutlo,3000);
+
+var id= setInterval(cambiarTitutlo, 1000);
+
+function parar(){
+    clearInterval(identificador)
+
+    setTimeout(parar, 5000)
+})
+
+// el contador se tiene que volver a declarar dentro de la nueva funcion y darle un incremento para que se actualice)//
+
+setInterval(function llamar(){
+    contador = contador + 1
+    cambiarTitutlo(contador)}, 1000
+}
+
+// busco todos los elementos
+querySelectorAall('queryString')
+// ejemplo seleccion
+var body = document.querySelector('body')
+body.innerHTML
+
+//funcion para agregar elemento adentro del HTML
+
+body.appendChild('hola')
+
+//función para crear elemento HTML, debe guardarse en una variables para usarse
+document.createElement('h1')
+
+var titulo= document.createElement('h1')
+
+body.appendChield(titulo)
+
+//Modificar atributos de un HTML
+document.querySelector('a')
+var enlace= document.querySelector('a');
+enlace.href;
+
+enlace.herf="http://google.com/";
+
+enlace.href;
+
+
+//Ejemplo modificacion atributos, agregando una clase existente
+
+enlace.classList.add('alert')
+enlace.classList.remove('alert')
+enlace.classList.toggle('alert') // si no tiene la clase especificada se la pone, y si la tiene se la saca //
+
+
+// EJERCICIOS //
+
+Guardar en 3 variables los links de las redes sociales de http://www.comunidadit.org/
+
+var redes sociales = document.querySelector('.social-share');
+
+document.querySelector('.fa-linkedin').parentEelement
+document.querySelector('.fa-facebook').parentEelement
+document.querySelector('.fa-twitter').parentEelement
+
+//modificar atributos//

@@ -1,0 +1,5 @@
+// 3) Crear un programa que obtenga un nombre por parámetro y cree una carpeta con ese nombre.
+
+var crearC = require('./fx3.js');
+
+crearC;

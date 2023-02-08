@@ -1,0 +1,144 @@
+/*2. En una carpeta:
+crear un archivo que exporte la función "siguiente", el cual retorne el siguiente de un número.
+crear un archivo que exporte la función "suma", el cual retorne la suma de 2 números.
+crear un archivo "main.js", el cual obtenga 2 números por parámetro y muestre por consola la 
+suma del siguiente del primer parámetro, con el segundo parámetro.
+Usando las funciones definidas en los otros archivos*/
+var sumar = require('./exportar-sumar.js')
+var siguiente = require('./exportar-siguiente.js')
+
+var n1 = parseInt(process.argv[2])
+var n2 = parseInt(process.argv[3])
+
+sumar((siguiente(n1)),n2)
+
+"//Fx siguiente
+function siguiente(n1){
+    return n1+1
+}
+module.exports = siguiente
+
+
+///////////----------------------------------------------------
+
+/*3. En una carpeta:
+crear un archivo que varias funciones
+    - multiplicar: multiplica 2 números que recibe por parámetros.
+    - restar: resta 2 números que recibe por parámetros.
+    - sumar: suma 2 números que recibe por parámetro.
+crear un archivo "main.js" que importe las funciones anteriores,
+y muestre por consola la multiplicación, resta y suma de los 2 números
+que reciba por parámetro el programa (3 console.log).*/
+
+function sumar(n1,n2){
+    console.log (n1 + n2)
+}
+function restar(n1,n2){
+    console.log (n1 - n2)
+}
+function multiplicar(n1,n2){
+    console.log (n1 * n2)
+}
+
+module.exports =  {
+    sumar: sumar,
+    restar: restar,
+    multiplicar: multiplicar
+}
+
+//M--
+
+/*crear un archivo "main.js" que importe las funciones anteriores,
+y muestre por consola la multiplicación, resta y suma de los 2 números
+que reciba por parámetro el programa (3 console.log).*/
+
+var funciones = require('./ejercicio3.js')
+
+var n1 = parseInt(process.argv[2])
+var n2 = parseInt(process.argv[3])
+ 
+funciones.restar(n1,n2)
+funciones.sumar(n1,n2)
+funciones.multiplicar(n1,n2)
+
+/////------------------------------------------------------------------
+
+cuando en el requiere lo escribo sin comillas es una variable
+
+Hacer un index.js // var funciones = require (./funciones/index.js) // no hace falta especificar index.js //
+
+y exportarlo como un objeto como un objeto cuando quiera usarse EJ:
+
+module.exports= {
+sumar
+restar
+multiplicar
+}
+
+luego se llama como funciones.restar()
+                    funciones.multiplicar()
+                    funciones.sumar()
+
+
+Con el modulo http se realizan conexiones
+
+---- como organizar los problemas, el primer paso es saber comunicarlos, como preguntarlos desde el lenguaje comun y refiriendose
+hacia donde quiere preguntarse ---
+
+En esta clase usamos el modulo nativo fl (filesystem)
+se puede hacer fs + tab para ver las opciones
+
+fs.readdirSync ('.')
+
+
+fs.writeFileSync (' ') // se utiliza sync al final para hacer otra cosa mientras se realiza el proceso de escribir
+
+fs.readFileSync('./archivo.txt' 'utf-8') // se utiliza el segundo parámetro para definirle el tipo de archivo
+
+
+
+
+/// JSON // -------------------------  https://stackabuse.com/reading-and-writing-json-files-with-node-js/   //
+
+son archivos similares a los objetos de javascript,
+Repaso objetos sintaxis
+
+{
+atributo: "valor",
+atributo1: "valor1",
+atriburto2: "valor2",
+}
+
+La diferencia es que en json los atributos tambien llevan "atributo" comillas.
+Se respeta la escritura de js.
+Del lado asignado derecho puede haber números, booleanos, strings y objetos. NO se pueden usar funciones.
+
+La utilidad de usar JSOn son para archivos de configuración.
+
+Para importar archivo json
+se hace con var config = require ('./configuracion.js')
+
+Crear un json desde gitbash con Node
+
+fs.writeFileSync ('./ejemplo.json',`{"nombre":"eli"}`) // Crea un ejemplo de archivo json con un objeto que tiene 1 atributo y 1 valor //
+
+Si se lee directamente se obtiene raw data, para leerlo humanamente lo guardamos en una variable
+y luego lo parseamos.
+
+var raw = fs.readFileSync ('./ejemplo.json');
+
+JSON.parse(raw);
+
+
+/// REPLACE /// ---------------------------------------------
+
+("norman").replace("n","N")
+
+var otroNombre= ("norman").replace("n","N")
+
+
+
+///////------------------------------------
+
+// EJERCICIOS // ----------------------------
+

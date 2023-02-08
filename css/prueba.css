@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+    font-size: 2vw;
+}
+
+body {
+    background: darkseagreen;
+}
+
+.foto {
+    width: 250px;
+    height: 250px;
+    background-color: darkmagenta;
+    margin: auto;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.perfil {
+    width: 300px;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid;
+}
+
+.seccion-principal {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.proyectos-contenedor {
+    display: flex;
+}
+
+.proyecto {
+    margin: 10px;
+}
+
+button {
+    text-align: center;
+    margin-top: 20px;
+    width: 200px;
+    height: 80px;
+    border: 2px solid red;
+    border-radius: 10px;
+    background-color: blanchedalmond;
+    cursor: pointer;
+    transition: transform .1s;
+}
+
+button:active {
+    transition: transform .1s;
+    transform: translateY(2px);
+}
+
+.boton {
+    text-align: center;
+}
+
+.button2 {
+    /* Para posicionar los botones a la misma posición que los campos de texto */
+    padding-left: 90px;
+    /* mismo tamaño a todos los elementos label */
+}
+
+button2 {
+    /* Este margen extra representa aproximadamente el mismo espacio que el espacio
+       entre los labels y sus campos de texto */
+    margin-left: .5em;
+}

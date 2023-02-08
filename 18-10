@@ -1,0 +1,283 @@
+//Parte 2
+
+/*Para hacer los siguientes ejercicios, vamos a usar la función Object.assign.
+
+Esta función copia todos los atributos de un objeto fuente, a otro destino.
+
+var destino = { a: 1, b: 2 }
+var fuente = { b: 3, c: 4 }
+
+Object.assign(destino, fuente)
+
+console.log(destino) //> { a: 1, b: 3, c: 4 }
+console.log(fuente) //> { b: 3, c: 4 }
+
+Prueben algunos ejemplos en la consola para que quede claro el comportamiento.
+
+Ejercicios:
+
+1) Crear un objeto "programador", el cual tenga como atributos:
+        - nombre: texto
+        - quemades: número entre 0 y 10.
+        - energia: número entre 0 y 10.
+        - empleado: false
+*/
+/*
+function intervalo(elemento){
+    var numero = parseInt(elemento);
+
+    if(isNaN(numero)){
+      alert('Ingrese solo números.');
+      elemento.focus();
+      elemento.select();
+      return false;
+    }
+    //Validamos que se cumpla el rango
+    if(numero<0 || numero>10){
+      alert('Solo se permite el siguiente rango: 0 - 10');
+      elemento.focus();
+      return false;
+    }
+    return true;
+  }
+
+var texto = console.log();
+
+var programador = new Object();
+programador.nombre = texto();
+programador.quemades= intervalo();
+programador.energia=  intervalo();
+programador.empleado= false;
+
+*/
+
+//Ejemplo de clase
+var programador = {
+    nombre: "norman",
+    quemades: 5,
+    energia: 5,
+    empleado: false
+}
+function esProductivo(){
+    return p.quemades < p.energia
+}
+
+function tomarCafe (p) {
+return Object.assign ({p,{
+    quemades: p.quemades-2,
+    energia: p.energia+3
+})
+}
+
+function programar(p, numero) {
+    return Object.assign ({
+        p,{
+            quemades: p.quemades+numero*2,
+            energia: p.energia-numero
+        }
+    })
+}
+
+function simularDespido (p) {
+    tomarCafe(p)
+    var productivo = esProductivo
+    var nuevoP = {
+        empleado: productivo
+    }
+    return Object.assign(p,nuevoP)
+}
+
+
+
+/*
+var persona_1= { nombre: "pepe", edad: 25}
+var persona_2= { nombre: "juan", }
+
+Object.assign(persona_2, persona_1) //para modificar propiedades de objetos se pisa el primero y el segundo es los valores que se le asigna
+/*
+
+
+2)Crear una función "esProductivo", que reciba un programador y retorne:
+        - true cuando el quemades sea menor a energia.
+        - false cuando no pase lo anterior. 
+*/
+function esProductivo(programador){
+    if (quemades<=energia) return true;
+    else return false;
+}
+
+
+/*
+
+3) Crear una función "tomarCafe", la cual recibe un programador, y retorna un programador con
+nivel de quemadés con 2 niveles menos de los que tenía, y energia con 3 niveles más de lo que tenía.
+
+4) Crear una funcíon "programar", la cual recibe un programador y un número de horas trabajadas,
+y retorna un programador con 1 nivel de energia menos por cada hora trabajada, y 2 niveles de quemades más por hora trabajada.
+
+5) Crear una función "dormir", la cual recibe un programador y un número de horas dormidas, y retorna un programador
+con 1 nivel de energia más por hora dormida, y 2 niveles de quemades menos por hora dormida.
+
+6) Crear una función "simularDespido", que reciba un programador, y si luego de tomar cafe y dormir 2 horas no
+es productivo, retorne un programador no empleado, de lo contrario retornar el mismo programador.
+
+7) Crear una función "simularContratacion", que reciba un programador, y si su nivel de energia es mayor a 8, su
+quemadés es menor a 2, y no es empleado, que retorne un programador empleado.
+
+8) Crear una función "accion", que reciba un programador y una función de las anteriores creadas como parámetros.
+La misma debe imprimir por consola el programador, luego ejecutar la función recibida por parámetro
+con el programador, y finalmente otra impresión por consola del programador.
+*/
+
+  
+// -------------------------------------------------------------------CALSE 18 - 10 ------------------------------------------------------------------------------------------
+// ----------------------------zapier para comunicar apis, el viernes 25/10 a las 9:20 se hará reunión con Atos para crear una aplicación--------------------------------------
+
+/*
+Jerarquias padre e hijos
+
+Obtener elementos del html para modificarlos en su contenido o atributos
+document.querySelector(href)
+
+js representa las etiquetas en objetos, se los puede guardar en una variable para modificarlos posteriormnete
+
+elemento.href = "www.ejemplo.com"  // cambia propiedades generales
+
+Para texto:
+elemento.textContent = "cambiado el texto"  
+
+elemento.innterHTNK= "<h1> Akguien </h1>" si es como texto se usa directamente " " sin las etiquetas;
+
+Para clases:
+elemento.classList.add('error')
+elemento.ClassList.remove('error')
+elemento.ClassList.toggle('error')  -- si no tiene la clase se la agrega (true)y si la tiene se la saca (false)
+
+
+
+/**
+ *  ---------------------------------------------------------------- # Ejercicio 2 (manipulación DOM) --------------------------------------------------------------------------
+ *
+ * Tenemos una lámpara, tal que cuando se ejecuta una
+ * functión llamada "Lapegue" por tocar el botón,
+ * la prende o apaga.
+ *
+ * Vamos a decir que una lámpara está prendida si
+ * tiene la clase "prendida", y está apagada
+ * si no tiene esa clase.
+ *
+ * Se pide implementar la función "Lapegue" para que
+ * prenda la luz si está apagada y la apague si está
+ * prendida. Siendo ejecutada con el botón "Lapegue".
+ * 
+ */
+  /**
+   * Ayuda: pensar el los pasos necesarios.
+   * 1. Seleccionar el elemento.
+   * 2. Acceder a la lista de sus clases.
+   * 3. Agregar o eliminar la clase prendida según corresponda
+   * (contamos con la función `elemento.classList.toggle(nombreClase)`).
+   */
+  
+
+
+/*
+-------------------------------------------------------------------------------- CSSS ------------------------------------------------------------------------------------------ 
+
+
+.ej2 {
+    padding: 20px;
+    display: flex;
+    height: 500px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ej2 .lampara {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    border: 1px solid #70701c;
+    border-radius: 25%;
+    background-color: #333;
+  }
+  
+  .ej2 .lampara.prendida {
+    background-color: yellow;
+    box-shadow: 0 0 50px yellow;
+  }
+  
+  .ej2 .lampara p {
+    text-align: center;
+    margin: 40px 0;
+  }
+  
+  .ej2 button {
+    transition: transform .2s;
+    font-size: 20px;
+    border-radius: 2px;
+    padding: 10px;
+    background-color: #faef93;
+    border-color: #70701c;
+  }
+  
+  button:active {
+    transition: transform .2s;
+    transform: scale(0.9);
+  } 
+
+
+  -------------------------------------------------------------------------------- HTML -------------------------------------------------------------------------------------
+
+  <section class="ej2">
+  <div class="lampara">
+    <p>Lampara</p>
+  </div>
+
+  <button onclick="Lapegue()">Lapegue</button>
+</section>
+
+-------------------------------------------------------------------------------- JS -------------------------------------------------------------------------------------------
+
+function Lapegue() {
+    var guardado = document.querySelector('.lampara')
+    guardado.classList.toggle('prendida');
+  }
+  */
+
+  //*********************** */ se guarda lo que se quiera usar, pero al momento de seleccionar cuando se trata de css empieza con ".algo"
+
+//****************************/ luego se refiere a ese mismo elemento/variable guardado y se le aplica un cambio específico, por ejemplo a la clase!
+  
+
+// {* transition: all 1s ease-in-out}
+/*
+
+body.onafterprint
+
+function apretarTecla(event){
+    console.log(event.key)
+}
+
+function moverCirculo(event) {
+    var circulo = document.querySelector('.circulo')
+
+    if (event.key === "ArrowUp") {
+        circulo.classList.remove('abajo')
+    }
+    if (event.key === "ArrowRight") {
+        circulo.classList.remove('')
+    }
+    if (event.key === ArrowLeft) {
+        
+    }
+    if (event.key === ArrowDown) {
+        
+    }
+}
+
+body.addEventListener('keydown', apretarTecla)
+
+event.key == "ArrowUp"
+
+*/

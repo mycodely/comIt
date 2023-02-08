@@ -1,0 +1,45 @@
+//M1
+function saludar (nombre) {
+console.log(`Hola ${nombre}`)
+console.log("Hola"+ nombre + "este fue el nombre")
+}
+
+module.exports = saludar;
+
+//M2
+
+var saludar = require('./modulo1.js');
+var nombre = process.argv[2];
+
+console.log(saludar);
+
+saludar(nombre);
+
+
+// Crear en una carpeta 2 archivos, en uno la fX sumar, y en otro va a requerir la función sumar,
+// y ejecutarlo con 2 números que requiera por parámetro
+
+//M3_ERR
+
+// Crear en una carpeta 2 archivos, en uno la fX sumar, y en otro va a requerir la función sumar,
+// y ejecutarlo con 2 números que requiera por parámetro
+
+function suma(v1,v2){
+    var objeto = new Object();
+    objeto.v1= v1;
+    objeto.v2= v2;
+    return console.log("El resultado es: ", objeto.v1+objeto.v2);
+    
+}
+
+module.exports = suma;
+
+//M4
+
+var suma = require('./modulosuma1.js');
+var v1= process.argv[2];
+var v2= process.argv[3];
+
+console.log(suma);
+
+suma(v1,v2);

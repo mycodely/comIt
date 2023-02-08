@@ -1,0 +1,47 @@
+// falta arreglar condicionales dentro de propiedades de los objetos para modificar los textos //
+// uso de funcion concat, con comillas simples concatenar variables y sintaxis ${} //
+
+var persona2 = { nombre: "Pepe",
+edad: 20,
+alto: true,
+mascota: { edad: 2, raza: "caniche"}, 
+saludar: function saludar (personaa) { 
+console.log("Te saludo, hola " + persona.nombre)}}
+
+var persona = { nombre: "Norman",
+edad: 25,
+alto: true,
+mascota: { edad: 2, raza: "caniche"},
+saludar: function saludar (personaa) {
+console.log("Te saludo, hola " + persona.nombre)}}
+
+var nombre = "norman";
+var profesion = "profesor";
+
+var texto = `te llamas ${nombre} y trabajas de ${profesion}`;
+
+var perro = {
+    nombre: "Pedrito",
+    edad: 2,
+    humor: {
+enojado: function ladrar(nombre){
+    console.log("estoy enojado" + nombre);
+},
+feliz: function jugar(nombre){
+    console.log("quiero jugar" + nombre);
+}
+}}
+
+var travesura = if(perro.enojado){
+    console.log("come tu tarea")}
+else if(perro.feliz){travesura ="salta de alegria"};
+
+var texto2= ` pero tu mascota ${perro} a veces ${travesura}`;
+
+let perro.humor(enojado);
+
+var pasoHoy= texto.concat(texto2);
+
+let perro.humor(feliz);
+
+var pasoHoy= texto.concat(texto2);

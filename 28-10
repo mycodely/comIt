@@ -1,0 +1,54 @@
+/*
+Ejercicios introducción Node.js
+
+Crear programa tal que:
+- obtenga un nombre como parámetro de programa e imprima un saludo para ese nombre.
+- obtenga 2 números por parámetro e imprima la suma de los mismos.
+- obtenga 5 números por parámetro e imprima la multiplicación de los mismos.
+
+*/
+
+// Programa 1
+
+var nombre = process.argv[2];
+
+function saludar(nombre){
+    resultado = console.log(nombre);
+    return resultado;
+};
+
+saludar(nombre);
+
+
+// Programa 2
+
+
+
+var numero1 = parseInt(process.argv[2]);
+var numero2 = parseInt(process.argv[3]);
+
+console.log(`Primer valor: ${numero1}, segundo valor ${numero2}`);
+
+console.log("la suma es", numero1+numero2);
+
+
+
+// Programa 3 no funciona, multiplica el último número como quiere y no guarda los anteriores.
+var numeros = new Array(5);
+var f;
+for (f = 0; f < numeros.length; f++) {
+    var v = parseInt(process.argv[2, 3, 4, 5, 6]); // process.argv[0] == "node" process.argv[1] == "test.js" process.argv[2] == "argumento1"
+    numeros[f] = parseInt(v);
+}
+
+var resultado = 1;
+for (f = 0; f < numeros.length; f++) {
+    resultado = numeros[f] * resultado;
+}
+console.log(resultado);
+
+
+console.log(`Valor 1 ingresado: ${process.argv[2]}Valor 2 ingresado: ${process.argv[3]}\nValor 3 ingresado: ${process.argv[4]}Valor 4 ingresado: ${process.argv[5]} Valor 5 ingresado: ${process.argv[6]}`)
+
+
+

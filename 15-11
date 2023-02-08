@@ -1,0 +1,34 @@
+var http = require("http")
+var puerto = 3000
+var j = require('./emoji.json');
+var fx = require('./fxemoji');
+var URL = require('url');
+
+
+
+var servidor = http.createServer(function (req, res) {
+var objetoUrl = URL.parse(req.url)  // separa todas las partes del URL
+  var busqueda = new URL.URLSearchParams(objetoUrl.query)  //query es "?...blablabla...""
+  var indice = busqueda.get('tipo')
+
+  if (objetoUrl.pathname === `/emoji`) {
+    var emoji= fx(indice)
+    res.end(emoji);
+} else if (objetoUrl.pathname === `/emoji?indice`) {
+      var emoji= fx(indice)
+      res.end(emoji);
+    else if (req.method === 'POST') {
+      res.end(JSON.stringify({ emoji: fx() }))
+    }  else {
+      res.statusCode = 404
+      res.end('ruta no encontrada :(')
+    }
+  } else {
+    res.statusCode = 404
+    res.end('ruta no encontrada :(')
+  }
+})
+
+servidor.listen(puerto, function () {
+  console.log(`servidor escuchando en el puerto ${puerto}`)
+})
